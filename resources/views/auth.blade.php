@@ -6,7 +6,7 @@
 <main class="form-signin w-50 m-auto">
   <form action="auth/submit">
     <h1 class="h3 mb-3 fw-normal">Авторизация</h1>
-
+@csrf
     <div class="form-floating">
       <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
       <label for="floatingInput">Адрес электронной почты</label>
@@ -17,7 +17,7 @@
     </div>
     <button class="w-100 btn btn-lg btn-primary" type="submit">Войти</button>
       <div class="form-floating">
-        <a href="reg">Регистрация</a>  
+        <a href="reg">Регистрация</a>
       </div>
 
   </form>

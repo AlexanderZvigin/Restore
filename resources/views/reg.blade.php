@@ -2,17 +2,32 @@
 @section('title')Страница Регистрации@endsection
 @section('content')
 <main class="form-signin w-50 m-auto">
+  @if($errors->any())
+  <div class="alert alert-danger">
+  <ul>
+    @foreach($errors->all() as $error)
+    <li>{{$error}}</li>
+
+    @endforeach
+  </ul>
+</div>
+  @endif
+
   <form action="{{route('reg-form')}}" method="post">
     @csrf
     <h1 class="h3 mb-3 fw-normal">Регистрация</h1>
 
     <div class="form-floating">
-      <input name="email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+      <input name="email" maxlength="25"  class="form-control" id="floatingInput" placeholder="name@example.com">
       <label for="floatingInput">Адрес электронной почты</label>
     </div>
     <div class="form-floating">
       <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="пароль">
       <label for="floatingPassword">Пароль</label>
+    </div>
+    <div class="form-floating">
+      <input name="checkpassword" type="password" class="form-control" id="floatingPassword" placeholder="пароль">
+      <label for="floatingPassword">Подтвердите пароль:</label>
     </div>
     <button class="w-100 btn btn-lg btn-primary" type="submit">Регистрация</button>
       <div class="form-floating">

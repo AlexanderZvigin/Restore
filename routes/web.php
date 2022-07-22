@@ -17,6 +17,4 @@ Route::get('auth', function () {
 Route::get('reg', function () {
     return view('reg');
 })->name('reg');
-Route::post('reg/submit', function () {
-    dd(Request::all());
-})->name('reg-form');
+Route::post('reg/submit','App\Http\Controllers\RegistrationController@registration')->name('reg-form');
