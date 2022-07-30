@@ -16,7 +16,10 @@
         <a class="nav-link" href="{{route ('films')}}">Фильмы</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{route ('auth')}}">Войти</a>
+        <a class="nav-link" href="{{route ('profile')}}">Профиль</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="login">Войти</a>
       </li>
 
 
