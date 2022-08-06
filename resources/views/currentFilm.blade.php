@@ -23,8 +23,9 @@
 						</ul>
 
 					</div>
+
 					<div class="details col-md-6">
-						<h3 class="product-title">{{$film->Name}}</h3>
+						<h3 class="product-title">{{$film->title}}</h3>
 						<div class="rating">
 							<div class="stars">
 								<span class="fa fa-star checked"></span>
@@ -35,7 +36,7 @@
 							</div>
 							<span class="review-no">Сюда вставить количество ревью</span>
 						</div>
-						<p class="product-description">}</p>
+						<p class="product-description"></p>
 						<p class="vote"><strong>Рейтинг:</strong>{{$film->Rating}}</strong></p>
             	<p class="vote"><strong>Режиссер:</strong>{{$film->Director}} </strong></p>
                 <p class="vote"><strong>Дата выхода:</strong>{{$film->Date}} </strong></p>
@@ -46,6 +47,39 @@
 				</div>
 			</div>
 		</div>
+		<div class="inline">
+		<section class="gradient-custom">
+		  <div class="container my-5 py-5">
+		    <div class="row d-flex justify-content-center">
+		      <div class="col-md-12 col-lg-10 col-xl-8">
+		        <div class="card">
+		          <div class="card-body p-4">
+		            <h4 class="text-center mb-4 pb-2">Отзывы пользователей</h4>
+
+		            <div class="row">
+		              <div class="col">
+		                <div class="d-flex flex-start">
+								@foreach($FilmComments as $comment)
+		                  <div class="flex-grow-1 flex-shrink-1">
+		                    <div>
+		                      <div class="d-flex justify-content-between align-items-center">
+		                        <p class="mb-1">
+		                         <strong>{{$comment->username}}</strong>
+		                        </p>
+		                      </div>
+													<div class="text-break">
+		                      <p class="small mb-0">
+		                       {{$comment->comment}}
+		                      </p>
+												</div>
+													<p class="small mb-0">
+		                       <strong>Моя оценка фильму:{{$comment->score}}</strong>
+		                      </p>
+		                    </div>
+	<br>
+	@endforeach
+		  </div>
+		</section>
 	</div>
   </body>
 </html>
