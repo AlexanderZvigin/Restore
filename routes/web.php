@@ -17,5 +17,14 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
   Route::get('/admin', function () {
     return view('admin');
   })->name('dashboard');
+  Route::get('addGame', function () {
+    return view('addGame');
+  })->name('addGame');
+  Route::get('addFilm', function () {
+    return view('addFilm');
+  })->name('addFilm');
+  Route::post('GameSave', [App\Http\Controllers\addGameController::class, 'GameSave'])->name('GameSave');
+  Route::post('FilmSave', [App\Http\Controllers\addFilmController::class, 'FilmSave'])->name('FilmSave');
+
 });
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
