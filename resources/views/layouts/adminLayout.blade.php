@@ -18,7 +18,7 @@
                 </a>
                 <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                     <li class="nav-item">
-                        <a href="#" class="nav-link align-middle px-0">
+                        <a href="{{route('dashboard')}}" class="nav-link align-middle px-0">
                             <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Главная</span>
                         </a>
                     </li>
@@ -42,9 +42,10 @@
                         </ul>
                     </li>
 
+
                     <li>
-                        <a href="users." class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Пользователи</span> </a>
+                        <a href="{{route('adminAllFilms')}}" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Все фильмы</span> </a>
                     </li>
                 </ul>
                 <hr>

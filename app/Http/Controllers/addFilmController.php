@@ -13,7 +13,7 @@ class addFilmController extends Controller
    $film->Director=$req->input('Director');
     $film->Date=$req->input('outdate');
      $film->Description=$req->input('description');
-     $fim->save();
+     $film->save();
      return redirect()->route('addFilm')->with('success','Фильм успешно добавлен!');
   }
 }

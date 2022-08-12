@@ -219,3 +219,6 @@ img {
 .text-break{
   word-break:break-all;
 }
+.filmDesc{
+  width:100%;
+}

@@ -1,8 +1,8 @@
 @extends('layouts.adminLayout')
-@section('title')Страница добавления фильма@endsection
+@section('title')Страница редактирования фильма@endsection
 @section('content')
 <div class="center">
-<form method="post" action="{{route('FilmSave')}}">
+<form method="post" action="{{route('filmChange',$film->id)}}">
   @csrf
   @if($errors->any())
   @foreach($errors->all() as $error)
@@ -18,22 +18,22 @@
   @endif
   <div class="form-group">
     <label for="exampleInputEmail1">Название фильма:</label>
-    <input name="title"  class="form-control"  >
+    <input value="{{$film->title}}" name="title"  class="form-control"  >
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Дата выхода:</label>
-    <input name="outdate" class="form-control"  placeholder="Дата выхода">
+    <input name="outdate" value="{{$film->Date}}" class="form-control"  placeholder="Дата выхода">
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Режиссер</label>
-    <input name="director"  class="form-control" placeholder="Режиссер">
+    <input name="director" value="{{$film->Director}}" class="form-control" placeholder="Режиссер">
   </div>
-
-  <div class="form-group">
-    <label for="exampleInputPassword1">Описание:</label>
-    <textarea  name="description" class="form-control" placeholder="Описание">
+<div class="form-group">
+  <label for="exampleInputPassword1">Описание</label>
+  <textarea style="height:100px;" name="description" value="{{$film->Description}}" class="form-control" placeholder="Дата выхода">
+    {{$film->Description}}
 </textarea>
-
+</div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 </div>

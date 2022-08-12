@@ -25,6 +25,9 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
   })->name('addFilm');
   Route::post('GameSave', [App\Http\Controllers\addGameController::class, 'GameSave'])->name('GameSave');
   Route::post('FilmSave', [App\Http\Controllers\addFilmController::class, 'FilmSave'])->name('FilmSave');
+  Route::get('GameSave', [App\Http\Controllers\adminAllFilmsController::class, 'allFilms'])->name('adminAllFilms');
+  Route::get('adminAllFilms/{filmId}', [App\Http\Controllers\editFilmsController::class, 'getFilm'])->name('filmEdit');
+  Route::post('adminAllFilms/{filmId}', [App\Http\Controllers\changeFilmsController::class, 'changeFilm'])->name('filmChange');
 
 });
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
