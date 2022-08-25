@@ -36,7 +36,7 @@
 							<span class="review-no">Сюда вставить количество ревью</span>
 						</div>
 						<p class="product-description">{{$game->Description}}</p>
-						<p class="vote"><strong>Рейтинг:</strong> {{$game->Rating}}</strong></p>
+						<p class="vote"><strong>Рейтинг:</strong></strong></p>
             	<p class="vote"><strong>Разработчик:</strong> {{$game->Developers}}</strong></p>
                 <p class="vote"><strong>Дата выхода:</strong> {{$game->OutDate}}</strong></p>
                   <p class="vote"><strong>Платформы:</strong> {{$game->Platform}}</strong></p>
@@ -78,6 +78,45 @@
 	                    </div>
 <br>
 @endforeach
+<div align="center">
+	@if(!Auth::user())
+	Оставлять свои отзывы могут только авторизованные пользователи,пожалуйста
+	войдите в свой аккаунт или зарегистрируйтесь
+	@endif
+@if(Auth::user())
+@if($errors->any())
+@foreach($errors->all() as $error)
+<div class="alert alert-danger">
+	{{$error}}
+</div>
+@endforeach
+@endif
+@if(session('success'))
+<div class="alert alert-success">
+	{{session('success')}}
+</div>
+@endif
+<form action="{{route('gameCommentSave',$game->id)}}" method="post">
+	@csrf
+<p>Оставить отзыв:</p>
+	<textarea name="comment" style="width:100%"></textarea>
+Ваша оценка игре:	<select name="rating">Ваша оценка фильму:
+	<option>0</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	<option>6</option>
+	<option>7</option>
+	<option>8</option>
+	<option>9</option>
+	<option>10</option>
+	</select>
+<button  type="submit"class="btn btn-primary">Отправить</a>
+</form>
+@endif
+</div>
 	  </div>
 	</section>
 </div>

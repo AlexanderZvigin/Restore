@@ -33,7 +33,7 @@ class LoginController extends Controller
    {
      return 'admin';
    } else {
-     return 'main';
+     return 'home';
    }
  }
 
