@@ -15,9 +15,11 @@
       <li class="nav-item">
         <a class="nav-link" href="{{route ('films')}}">Фильмы</a>
       </li>
+      @if(Auth::user())
       <li class="nav-item">
         <a class="nav-link" href="{{route ('profile')}}">Профиль</a>
       </li>
+      @endif
       <li class="nav-item">
         <a class="nav-link" href="login">Войти</a>
       </li>

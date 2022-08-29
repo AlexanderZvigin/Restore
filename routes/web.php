@@ -36,5 +36,6 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
 });
 Route::post('currentFilm/{filmId}', [App\Http\Controllers\currentFilmController::class, 'CommentSave'])->name('CommentSave');
 Route::post('currentGame/{gameId}', [App\Http\Controllers\currentGameController::class, 'CommentSave'])->name('gameCommentSave');
+Route::post('profileChange', [App\Http\Controllers\ProfileController::class, 'ProfileChange'])->name('profileChange');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
