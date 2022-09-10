@@ -24,7 +24,8 @@ class ProfileRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+          'username'=>'required',
+          'email'=>'required'
         ];
     }
 }

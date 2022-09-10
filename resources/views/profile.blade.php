@@ -1,10 +1,20 @@
 @extends('app')
 @section('title')Страница текущей игры@endsection
 @section('content')
-{{ Auth::user()->name }}
-{{ Auth::user()->email}}
 <div class="container rounded bg-white mt-5 mb-5">
     <div class="row">
+      @if($errors->any())
+      @foreach($errors->all() as $error)
+      <div class="alert alert-danger">
+        {{$error}}
+      </div>
+      @endforeach
+      @endif
+      @if(session('success'))
+      <div class="alert alert-success">
+        {{session('success')}}
+      </div>
+      @endif
         <div class="col-md-3 border-right">
             <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold">{{Auth::user()->name}}</span><span class="text-black-50"></span><span> </span></div>
         </div>
@@ -39,7 +49,7 @@
 <a class="dropdown-item" href="{{ route('logout') }}"
    onclick="event.preventDefault();
                  document.getElementById('logout-form').submit();">
-    {{ __('Logout') }}
+    {{ __('Выйти') }}
 </a>
 
 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
