@@ -34,6 +34,7 @@
 								<span class="fa fa-star"></span>
 								<span class="fa fa-star"></span>
 							</div>
+
 							<span class="review-no">Сюда вставить количество ревью</span>
 						</div>
 						<p class="product-description"></p>

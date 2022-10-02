@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class IsCriticColumnUpdate extends Migration
+class AddFilmImg extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class IsCriticColumnUpdate extends Migration
      */
     public function up()
     {
-      Schema::table('users', function (Blueprint $table) {
-          $table->integer('is_critic');
-    });
+      Schema::table('films', function (Blueprint $table) {
+$table->string('image');
+});
     }
 
     /**
@@ -25,8 +25,8 @@ class IsCriticColumnUpdate extends Migration
      */
     public function down()
     {
-      Schema::table('users', function (Blueprint $table) {
-$table->dropColumn('is_critic');
+      Schema::table('films', function (Blueprint $table) {
+$table->dropColumn('image');
 });
     }
 }

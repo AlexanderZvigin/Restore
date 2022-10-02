@@ -13,7 +13,7 @@ class addFilmController extends Controller
   {
   $film=new Films();
   $film->title=$req->input('title');
-   $film->Director=$req->input('Director');
+   $film->Director=$req->input('director');
     $film->Date=$req->input('outdate');
      $film->Description=$req->input('description');
      $film->save();

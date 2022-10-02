@@ -28,6 +28,7 @@ class addFilmRequest extends FormRequest
           'outdate'=>'required',
           'director'=>'required',
           'description'=>'required',
+          
         ];
     }
     public function messages()
