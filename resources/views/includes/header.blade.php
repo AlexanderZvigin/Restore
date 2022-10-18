@@ -20,10 +20,11 @@
         <a class="nav-link" href="{{route ('profile')}}">Профиль</a>
       </li>
       @endif
+        @if(!Auth::user())
       <li class="nav-item">
         <a class="nav-link" href="login">Войти</a>
       </li>
-
+  @endif
 
     </ul>
   </div>

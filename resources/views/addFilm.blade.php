@@ -2,7 +2,7 @@
 @section('title')Страница добавления фильма@endsection
 @section('content')
 <div class="center">
-<form method="post" action="{{route('FilmSave')}}" enctype=”multipart/form-data”>
+<form method="post" action="{{route('FilmSave')}}" enctype='multipart/form-data'>
   @csrf
   @if($errors->any())
   @foreach($errors->all() as $error)
@@ -32,8 +32,7 @@
     <label for="exampleInputPassword1">Описание:</label>
     <textarea  name="description" class="form-control" placeholder="Описание">
 </textarea>
-
-
+<input type='file' name='image' >
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 </div>

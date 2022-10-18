@@ -42,6 +42,7 @@
             	<p class="vote"><strong>Режиссер:</strong>{{$film->Director}} </strong></p>
                 <p class="vote"><strong>Дата выхода:</strong>{{$film->Date}} </strong></p>
                   <p class="vote"><strong>Описание:</strong>{{$film->Description}} </strong></p>
+ <img src="..." alt="Здесь могла быть ваша реклама">
 
 						</div>
 					</div>

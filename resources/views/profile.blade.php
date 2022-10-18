@@ -33,24 +33,25 @@
 
                 </div>
 
-                <div class="mt-5 text-center"><button type="submit" class="btn btn-primary profile-button" type="button">Сохранить изменения</button></div>
+                <div class="mt-5 text-center"><button type="submit" class="btn btn-primary profile-button" type="button">Сохранить изменения</button>
+                  <a class="btn btn-primary profile-button" href="{{ route('logout') }}"
+                     onclick="event.preventDefault();
+                                   document.getElementById('logout-form').submit();">
+                      {{ __('Выйти') }}
+                  </a>
+                </div>
+
               </form>
             </div>
         </div>
         <div class="col-md-4">
-            <div class="p-3 py-5">
-                <div class="d-flex justify-content-between align-items-center experience"><span>Последение комментарии:</span><span class="border px-3 p-1 add-experience"></span></div><br>
-                сюда комменты пользователя
+
         </div>
     </div>
 </div>
 </div>
 </div>
-<a class="dropdown-item" href="{{ route('logout') }}"
-   onclick="event.preventDefault();
-                 document.getElementById('logout-form').submit();">
-    {{ __('Выйти') }}
-</a>
+
 
 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
     @csrf

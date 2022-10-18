@@ -14,7 +14,7 @@ class AddFilmImg extends Migration
     public function up()
     {
       Schema::table('films', function (Blueprint $table) {
-$table->string('image');
+$table->string('img');
 });
     }
 
@@ -26,7 +26,7 @@ $table->string('image');
     public function down()
     {
       Schema::table('films', function (Blueprint $table) {
-$table->dropColumn('image');
+$table->dropColumn('img');
 });
     }
 }

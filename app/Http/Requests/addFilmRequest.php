@@ -28,7 +28,7 @@ class addFilmRequest extends FormRequest
           'outdate'=>'required',
           'director'=>'required',
           'description'=>'required',
-          
+          'image' => 'image|nullable|max: 1999'
         ];
     }
     public function messages()
