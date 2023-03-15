@@ -30,21 +30,21 @@
                             <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Добавить Документ</span></a>
                     </li>
                     <li>
-                        <a href="{{route('Forum')}}" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
-                            <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline">Просмотр форума</span></a>
-                            <a href="{{route('adminAllGames')}}" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
-                                <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline">Все игры</span></a>
+                        <a href="{{route('AddNewsForm')}}" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
+                            <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline">Добавить новость</span></a>
+                    
                     </li>
 
 
                     <li>
-                        <a href="{{route('Forum')}}" class="nav-link px-0 align-middle">
+                        <a href="{{route('Documents')}}" class="nav-link px-0 align-middle">
                             <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Просмотр обратной связи</span> </a>
                     </li>
                     <li>
-                        <a href="{{route('addCritic')}}" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Добавить критика</span> </a>
+                        <a href="{{route('AdminAllNews')}}" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Редактирование новостей</span> </a>
                     </li>
+                    
                 </ul>
                 <hr>
                 <div class="dropdown pb-4">

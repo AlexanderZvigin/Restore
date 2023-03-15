@@ -30,6 +30,13 @@ Route::get('Documents', function () {
 Route::post('profileChange', [App\Http\Controllers\ProfileController::class, 'ProfileChange'])->name('profileChange');
 //Route::get('FilmDelete/{filmId}', [App\Http\Controllers\filmDeleteController::class, 'FilmDelete'])->name('FilmDelete');
 //Route::get('adminAllGames', [App\Http\Controllers\adminAllGamesController::class, 'allGames'])->name('adminAllGames');
-
+Route::post('AddNews', [App\Http\Controllers\AddNewsController::class, 'AddNews'])->name('AddNews');
+Route::get('addNewsForm', function () {
+  return view('NewsForm');
+})->name('AddNewsForm');
+Route::get('adminAllNews', [App\Http\Controllers\adminAllNewsController::class, 'allNews'] )->name('AdminAllNews');
+Route::get('ChangeNews/{news_id}', [App\Http\Controllers\ChangeNewsController::class, 'getNews'] )->name('ChangeNews');
+Route::get('DeleteNews/{news_id}', [App\Http\Controllers\DeleteNewsController::class, 'DeleteNews'] )->name('DeleteNews');
+Route::post('updateNews/{news_id}', [App\Http\Controllers\ChangeNewsController::class, 'updateNews'] )->name('updateNews');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
