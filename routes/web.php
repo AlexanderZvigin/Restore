@@ -38,5 +38,9 @@ Route::get('adminAllNews', [App\Http\Controllers\adminAllNewsController::class, 
 Route::get('ChangeNews/{news_id}', [App\Http\Controllers\ChangeNewsController::class, 'getNews'] )->name('ChangeNews');
 Route::get('DeleteNews/{news_id}', [App\Http\Controllers\DeleteNewsController::class, 'DeleteNews'] )->name('DeleteNews');
 Route::post('updateNews/{news_id}', [App\Http\Controllers\ChangeNewsController::class, 'updateNews'] )->name('updateNews');
+Route::post('feedback', [App\Http\Controllers\feedbackController::class, 'feedback'] )->name('feedback');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('lettersForm', function () {
+  return view('lettersForm');
+})->name('lettersForm');

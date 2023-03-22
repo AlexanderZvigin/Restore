@@ -24,7 +24,7 @@ class currentFilmController extends Controller
     $filmComment->score=$req->input('rating');
     $filmComment->comment=$req->input('comment');
     $filmComment->save();
-    return redirect()->route('currentFilm',$gameId)->with('success','Отзыв успешно добавлен!');
+    return redirect()->route('currentFilm',$id)->with('success','Отзыв успешно добавлен!');
 
   }
 }

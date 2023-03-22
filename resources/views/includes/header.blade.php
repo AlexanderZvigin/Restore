@@ -16,7 +16,7 @@
         <a class="nav-link" href="{{route ('Documents')}}">Учеба</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{route ('Documents')}}">Обратная связь</a>
+        <a class="nav-link" href="{{route ('lettersForm')}}">Обратная связь</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="{{route ('Documents')}}">Доп.информация</a>
