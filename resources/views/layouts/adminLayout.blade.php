@@ -26,25 +26,25 @@
                     <li>
 
                     <li>
-                        <a href="{{route('Documents')}}" class="nav-link px-0 align-middle">
+                        <a href="{{route('updateDocument')}}" class="nav-link px-0 align-middle">
                             <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Добавить Документ</span></a>
                     </li>
                     <li>
                         <a href="{{route('AddNewsForm')}}" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
                             <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline">Добавить новость</span></a>
-                    
+
                     </li>
 
 
                     <li>
-                        <a href="{{route('Documents')}}" class="nav-link px-0 align-middle">
+                        <a href="{{route('adminFeedback')}}" class="nav-link px-0 align-middle">
                             <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Просмотр обратной связи</span> </a>
                     </li>
                     <li>
                         <a href="{{route('AdminAllNews')}}" class="nav-link px-0 align-middle">
                             <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Редактирование новостей</span> </a>
                     </li>
-                    
+
                 </ul>
                 <hr>
                 <div class="dropdown pb-4">

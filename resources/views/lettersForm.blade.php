@@ -24,7 +24,7 @@
     <form>
     <div class="col">
   <div class="form-group">
-    <label for="exampleInputEmail1">Ваше имя:</label>
+    <label for="exampleInputEmail1">Ваш email:</label>
     <input type="text" class="form-control w-75" name="name" >
   </div>
   <div class="form-group">
@@ -42,5 +42,5 @@
         Мы постараемся ответить в самые ближайшие сроки!
     </div>
   </div>
-  
+
             @endsection

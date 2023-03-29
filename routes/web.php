@@ -39,7 +39,15 @@ Route::get('ChangeNews/{news_id}', [App\Http\Controllers\ChangeNewsController::c
 Route::get('DeleteNews/{news_id}', [App\Http\Controllers\DeleteNewsController::class, 'DeleteNews'] )->name('DeleteNews');
 Route::post('updateNews/{news_id}', [App\Http\Controllers\ChangeNewsController::class, 'updateNews'] )->name('updateNews');
 Route::post('feedback', [App\Http\Controllers\feedbackController::class, 'feedback'] )->name('feedback');
-
+Route::get('/adminFeedback', [App\Http\Controllers\adminFeedbackcontroller::class, 'getFeedback'])->name('adminFeedback');
+//Route::get('getFeedback', function () {
+  //return view('adminFeedback');
+//})->name('adminFeedback');
+Route::post('FileSave', [App\Http\Controllers\Filescontroller::class, 'FileSave'])->name('FileSave');
+Route::get('updateDocument', function () {
+  return view('DocumentAdd');
+})->name('updateDocument');
+Route::get('Deletefeedback/{feedback_id}', [App\Http\Controllers\DeletefeedbackController::class, 'DeleteFeedback'] )->name('DeleteFeedback');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('lettersForm', function () {
   return view('lettersForm');

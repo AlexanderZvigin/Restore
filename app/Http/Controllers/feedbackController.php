@@ -11,7 +11,7 @@ class feedbackController extends Controller
 {  public function feedback(feedbackRequest $req)
     {
         $data=new Feedback();
-        $data->name=$req->input('name');    
+        $data->email=$req->input('name');
         $data->message=$req->input('message');
         $data->save();
            return redirect()->route('lettersForm')->with('success','Обращение успешно отправлено');
