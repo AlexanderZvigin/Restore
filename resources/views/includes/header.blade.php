@@ -10,7 +10,7 @@
         <a class="nav-link" href="{{route ('Documents')}}">Документы</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{route ('Documents')}}">Новости</a>
+        <a class="nav-link" href="{{route ('getNews')}}">Новости</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="{{route ('Documents')}}">Учеба</a>
