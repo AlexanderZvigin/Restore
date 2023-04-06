@@ -1,5 +1,5 @@
 @extends('layouts.adminLayout')
-@section('title')Страница загрузки документов @endsection
+@section('title')Страница загрузки фото @endsection
 @section('content')
 <form method="post" enctype="multipart/form-data" action="{{route('FileSave')}}">
   @csrf

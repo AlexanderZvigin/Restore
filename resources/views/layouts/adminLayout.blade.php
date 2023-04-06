@@ -27,7 +27,7 @@
 
                     <li>
                         <a href="{{route('updateDocument')}}" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Добавить Документ</span></a>
+                            <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Добавить фото</span></a>
                     </li>
                     <li>
                         <a href="{{route('AddNewsForm')}}" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">

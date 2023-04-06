@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Storage;
+use App\Models\Photos;
 
 class Filescontroller extends Controller
 {
@@ -17,10 +18,13 @@ $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
 // Get just Extension
 $extension = $request->file('file')->getClientOriginalExtension();
 $fileNameToStore = $filename.'.'.$extension;
-//dd($fileNameToStore);
+$photo=new Photos();
+$photo->Filename=$fileNameToStore;
+$photo->save();
 // Filename To store
 //dd($request->file('image'));
 $path = $request->file('file')->storeAs('public/images',$fileNameToStore);
+return redirect()->route('updateDocument')->with('success','Фото успешно загружено');
 //dd($path);
 ///СЕЙВИТЬ ТОЛЬКО ИМЯ ФАЙЛА А 3АТЕМ В ШАБЛОНЕ ПОДКЛЮЧИТЬСЯ И ВЫВЕСТИ ФАЙЛ
 }
@@ -40,9 +44,9 @@ $path = $request->file('file')->storeAs('public/images',$fileNameToStore);
     //return $directories;
 public function Display()
 {
-  //echo "string";
-  $directory='public/images';
-  $files = Storage::files($directory);
-  dd($files);
+  //$directory='public/images';
+//$photos = Storage::files($directory);
+//dd($photos);
+    return view('Photos',['photos'=>Photos::all()]);
 }
 }
