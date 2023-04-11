@@ -13,11 +13,13 @@
          <a href="{{route('getCurrentNews',$news->id)}}" class="stretched-link">Продолжить чтение</a>
        </div>
        <div class="col-auto d-none d-lg-block">
-         <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" aria-label="Placeholder: Thumbnail" preserveaspectratio="xMidYMid slice" role="img" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+         <svg class="bd-placeholder-img" width="200" height="250"   preserveaspectratio="xMidYMid slice" role="img" focusable="false"><title>Placeholder</title>
 
        </div>
      </div>
    </div>
  </div>
    @endforeach
+    {{$data->links()}}
+
    @endsection

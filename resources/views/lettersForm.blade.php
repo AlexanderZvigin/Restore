@@ -36,7 +36,7 @@
 </form>
     </div>
     <div class="col">
-    <img class="rounded-circle" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"></div>
+    <img class="rounded-circle" width="150px" src="storage/support.png"></div>
     </div>
     <div class="col">
         Мы постараемся ответить в самые ближайшие сроки!

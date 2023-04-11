@@ -13,6 +13,16 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
   Route::get('/admin', function () {
     return view('admin');
   })->name('dashboard');
+  Route::get('updateDocument', function () {
+    return view('DocumentAdd');
+  })->name('updateDocument');
+  Route::post('AddNews', [App\Http\Controllers\AddNewsController::class, 'AddNews'])->name('AddNews');
+  Route::get('addNewsForm', function () {
+    return view('NewsForm');
+  })->name('AddNewsForm');
+  Route::get('adminAllNews', [App\Http\Controllers\adminAllNewsController::class, 'allNews'] )->name('AdminAllNews');
+  Route::get('ChangeNews/{news_id}', [App\Http\Controllers\ChangeNewsController::class, 'getNews'] )->name('ChangeNews');
+  Route::get('DeleteNews/{news_id}', [App\Http\Controllers\DeleteNewsController::class, 'DeleteNews'] )->name('DeleteNews');
 //  Route::get('addGame', function () {
 //    return view('addGame');
 //  })->name('addGame');
@@ -30,24 +40,17 @@ Route::get('Documents', function () {
 Route::post('profileChange', [App\Http\Controllers\ProfileController::class, 'ProfileChange'])->name('profileChange');
 //Route::get('FilmDelete/{filmId}', [App\Http\Controllers\filmDeleteController::class, 'FilmDelete'])->name('FilmDelete');
 //Route::get('adminAllGames', [App\Http\Controllers\adminAllGamesController::class, 'allGames'])->name('adminAllGames');
-Route::post('AddNews', [App\Http\Controllers\AddNewsController::class, 'AddNews'])->name('AddNews');
-Route::get('addNewsForm', function () {
-  return view('NewsForm');
-})->name('AddNewsForm');
-Route::get('adminAllNews', [App\Http\Controllers\adminAllNewsController::class, 'allNews'] )->name('AdminAllNews');
-Route::get('ChangeNews/{news_id}', [App\Http\Controllers\ChangeNewsController::class, 'getNews'] )->name('ChangeNews');
-Route::get('DeleteNews/{news_id}', [App\Http\Controllers\DeleteNewsController::class, 'DeleteNews'] )->name('DeleteNews');
-Route::post('updateNews/{news_id}', [App\Http\Controllers\ChangeNewsController::class, 'updateNews'] )->name('updateNews');
 Route::post('feedback', [App\Http\Controllers\feedbackController::class, 'feedback'] )->name('feedback');
+//Route::get('adminAllNews', [App\Http\Controllers\adminAllNewsController::class, 'allNews'] )->name('AdminAllNews');
+//Route::get('ChangeNews/{news_id}', [App\Http\Controllers\ChangeNewsController::class, 'getNews'] )->name('ChangeNews');
+//Route::get('DeleteNews/{news_id}', [App\Http\Controllers\DeleteNewsController::class, 'DeleteNews'] )->name('DeleteNews');
+Route::post('updateNews/{news_id}', [App\Http\Controllers\ChangeNewsController::class, 'updateNews'] )->name('updateNews');
 Route::get('/adminFeedback', [App\Http\Controllers\adminFeedbackcontroller::class, 'getFeedback'])->name('adminFeedback');
 //Route::get('getFeedback', function () {
   //return view('adminFeedback');
 //})->name('adminFeedback');
 Route::post('FileSave', [App\Http\Controllers\Filescontroller::class, 'FileSave'])->name('FileSave');
 Route::get('DisplayPhotos', [App\Http\Controllers\Filescontroller::class, 'Display'])->name('DisplayPhotos');
-Route::get('updateDocument', function () {
-  return view('DocumentAdd');
-})->name('updateDocument');
 Route::get('News/{news_id}', [App\Http\Controllers\currentNewscontroller::class, 'getCurrentNews'])->name('getCurrentNews');
 Route::get('Photos', [App\Http\Controllers\Photoscontroller::class, 'getPhotos'])->name('Photos');
 Route::get('News', [App\Http\Controllers\getNewscontroller::class, 'getNews'])->name('getNews');
@@ -56,3 +59,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('lettersForm', function () {
   return view('lettersForm');
 })->name('lettersForm');
+Route::get('Documents/{document_name}', [App\Http\Controllers\Filescontroller::class, 'getDocument'])->name('getDocument');

@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use App\Http\Requests\registerRequest;
 
 class RegisterController extends Controller
 {
@@ -50,10 +51,17 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
+            'name' => ['required', 'string', 'max:25','unique:users'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
+            'password' => ['required', 'string', 'min:8', 'confirmed','max:25'],
+        ],['password.confirmed'=>'Пароли не совпадают',
+            'email.unique'=>'Адрес электронной почты уже существует',
+              'name.required'=>'Данное поле обязательно для заполнения',
+            'name.max'=>'Поле имени не может быть больше чем 25 символов',
+            'email.required'=>'Данное поле обязательно для заполнения',
+          'password.required'=>'Поле обязательно для заполнения',
+        'password.min'=>'Пароль должен быть не короче 8 символов',
+      'password.max'=>'Пароль должен быть не длиннее 25 символов',]);
     }
 
     /**

@@ -49,4 +49,8 @@ public function Display()
 //dd($photos);
     return view('Photos',['photos'=>Photos::all()]);
 }
+public function getDocument($document_name)
+{
+  return Storage::download('public/documents/'.$document_name);
+}
 }
